@@ -1,0 +1,18 @@
+{
+  "name": "bodhidigital-zetcd",
+  "version": "0.1.0",
+  "author": "bodhidigital",
+  "summary": "Puppet module for managing coreos/zetcd.",
+  "license": "Apache-2.0",
+  "source": "https://github.com/bodhidigital/puppet-zetcd.git",
+  "project_page": "https://github.com/bodhidigital/puppet-zetcd",
+  "issues_url": "https://github.com/bodhidigital/puppet-zetcd/issues",
+  "dependencies": [
+    {
+      "name": "puppetlabs-stdlib",
+      "version_requirement": ">= 1.0.0"
+    }
+  ],
+  "data_provider": null
+}
+
