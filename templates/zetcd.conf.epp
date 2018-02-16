@@ -1,0 +1,18 @@
+<%-|  String                          $service_name = $::zetcd::service_name,
+      String                          $zkaddr       = $::zetcd::zkaddr,
+      Array[Stdlib::Httpurl]          $endpoints    = $::zetcd::endpoints,
+      Optional[Stdlib::Absolutepath]  $cafile       = $::zetcd::cafile,
+      Optional[Stdlib::Absolutepath]  $certfile     = $::zetcd::certfile,
+      Optional[Stdlib::Absolutepath]  $keyfile      = $::zetcd::keyfile,
+|-%>
+# /etc/default/<%= $service_name %>
+
+DAEMON_OPTS="<% -%>
+-zkaddr '<%= $zkaddr %>'<% -%>
+ -endpoints '<%= join($endpoints, ',') %>'<% -%>
+<% if $cafile { %> -cafile '<%= $cafile %>'<% } -%>
+<% if $certfile { %> -certfile '<%= $certfile %>'<% } -%>
+<% if $keyfile { %> -keyfile '<%= $keyfile %>'<% } -%>
+"
+
+# vim: set syn=conf:

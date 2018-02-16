@@ -1,0 +1,19 @@
+<%-|  Stdlib::Absolutepath  $zetcd_path     = $::zetcd::zetcd_path,
+      String                $service_name   = $::zetcd::service_name,
+      String                $zetcd_user     = $::zetcd::zetcd_user,
+      String                $zetcd_group    = $::zetcd::zetcd_group,
+|-%>
+[Unit]
+Description=zetcd server
+Wants=network.target
+After=network.target etcd.service
+
+[Service]
+Type=simple
+EnvironmentFile=/etc/default/<%= $service_name %>
+User=<%= $zetcd_user %>
+Group=<%= $zetcd_group %>
+ExecStart=<%= $zetcd_path %> $DAEMON_OPTS
+
+[Install]
+WantedBy=multi-user.target
