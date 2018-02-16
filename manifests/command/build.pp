@@ -7,11 +7,14 @@ class zetcd::command::build (
 ) {
   require '::zetcd::command::go_package'
 
+  ensure_packages([ 'git' ])
+
   exec { 'go get zetcd':
     command     => join([$go_path, 'get', $zetcd_source], ' '),
     creates     => "$gopath_cache/bin/zetcd",
     environment => [ "GOPATH=$gopath_cache" ],
     timeout     => 600,
+    require     => Package['git'],
   }
 }
 
