@@ -8,7 +8,7 @@ class zetcd::params {
   $manage_zetcd_user    = true
   $manage_zetcd_group   = true
 
-  $zetcd_source = 'github.com/coreos/zetcd/cmd/zkctl'
+  $zetcd_source = 'github.com/coreos/zetcd/cmd/zetcd'
   $zetcd_path   = '/usr/local/bin/zetcd'
 
   case $::facts['os']['family'] {
