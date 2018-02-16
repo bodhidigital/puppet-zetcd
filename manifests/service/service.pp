@@ -4,6 +4,8 @@ class zetcd::service::service (
   Boolean $manage_service = $::zetcd::manage_service,
   String  $service_name   = $::zetcd::service_name,
 ) {
+  require '::zetcd::command'
+  require '::zetcd::user'
   require '::zetcd::conf'
 
   if $manage_service {
