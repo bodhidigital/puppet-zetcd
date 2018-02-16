@@ -7,12 +7,25 @@
   "source": "https://github.com/bodhidigital/puppet-zetcd.git",
   "project_page": "https://github.com/bodhidigital/puppet-zetcd",
   "issues_url": "https://github.com/bodhidigital/puppet-zetcd/issues",
+  "operatingsystem_support": [
+    {
+      "operatingsystem": "Debian",
+      "operatingsystemrelease": [
+        "9"
+      ]
+    }
+  ],
+  "requirements": [
+    {
+      "name": "puppet",
+      "version_requirement": ">= 4.0.0 < 6.0.0"
+    }
+  ],
   "dependencies": [
     {
       "name": "puppetlabs-stdlib",
-      "version_requirement": ">= 1.0.0"
+      "version_requirement": ">= 4.13.0 < 5.0.0"
     }
   ],
   "data_provider": null
 }
-
