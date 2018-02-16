@@ -3,6 +3,7 @@
 class zetcd::user::user (
   Boolean $manage_zetcd_user  = $::zetcd::manage_zetcd_user,
   String  $zetcd_user         = $::zetcd::zetcd_user,
+  String  $zetcd_group        = $::zetcd::zetcd_group,
 ) {
   require '::zetcd::user::group'
 
