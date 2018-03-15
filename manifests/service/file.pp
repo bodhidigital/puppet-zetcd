@@ -12,7 +12,7 @@ class zetcd::service::file (
   }
 
   if $manage_service_file {
-    file { 'zetcd.servie':
+    file { 'zetcd.service':
       path    => "/etc/systemd/system/$service_name.service",
       content => epp("$module_name/zetcd.service.epp"),
       notify  => Exec['reload systemd for zetcd'],
